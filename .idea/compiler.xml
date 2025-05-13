@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-acl-client" />
+        <module name="common-util" />
+        <module name="service-gateway" />
+        <module name="rabbit_util" />
+        <module name="service-device" />
+        <module name="service-util" />
+        <module name="service-acl" />
+        <module name="service-approval" />
+        <module name="service-message" />
+        <module name="service-search" />
+        <module name="model" />
+        <module name="service-message-client" />
+        <module name="service-device-client" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="serevice-message-client" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="" />
+      <module name="common-util" options="-parameters" />
+      <module name="model" options="-parameters" />
+      <module name="rabbit_util" options="-parameters" />
+      <module name="serevice-message-client" options="-parameters" />
+      <module name="service" options="" />
+      <module name="service-acl" options="-parameters" />
+      <module name="service-acl-client" options="-parameters" />
+      <module name="service-approval" options="-parameters" />
+      <module name="service-client" options="" />
+      <module name="service-device" options="-parameters" />
+      <module name="service-device-client" options="-parameters" />
+      <module name="service-gateway" options="-parameters" />
+      <module name="service-message" options="-parameters" />
+      <module name="service-message-client" options="-parameters" />
+      <module name="service-search" options="-parameters" />
+      <module name="service-util" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.selfstudy.mapper.SystemchartMapper">
+
+    <resultMap id="BaseResultMap" type="com.selfstudy.pojo.Systemchart">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="usernumber" column="usernumber" jdbcType="INTEGER"/>
+            <result property="articlenumber" column="articlenumber" jdbcType="INTEGER"/>
+            <result property="order" column="order" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,usernumber,articlenumber,
+        order
+    </sql>
+</mapper>

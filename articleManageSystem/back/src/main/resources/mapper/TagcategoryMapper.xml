@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.selfstudy.mapper.TagcategoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.selfstudy.pojo.Tagcategory">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="tagcategory" column="tagcategory" jdbcType="VARCHAR"/>
+            <result property="userid" column="userid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,tagcategory,userid
+    </sql>
+
+    <select id="selectTagcategory" resultType="Tagcategory">
+        select * from tagcategory
+        where tagcategory like CONCAT('%', #{tagcategoryname}, '%')
+    </select>
+
+</mapper>

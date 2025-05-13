@@ -1,0 +1,81 @@
+# server配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    jsp:
+      init-parameters:
+        development: true
+
+# 视图解析器和连接池配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql:///big_event
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 50MB # 设置上传文件的最大大小
+      max-request-size: 50MB # 设置请求的最大大小
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+      password: 123456
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: 2000
+
+
+openai:
+  api:
+    key: "sk-1As8P979mePxQrUCvq2acrbm4H8BJ27t4DkeIQBHq2kQaSkW"
+    url: "https://api.moonshot.cn/v1/chat/completions"
+
+
+#支付宝
+#支付宝
+alipay:
+  appId: 2021000143602275
+  appPrivateKey: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCSmyO48CPkvUobu0MUB3xNUlwFtll6ul7aOVrqe2mdQVDwZmAt1cwtCxV8vESi6ZwB2DtTfjtCx9+t3zWpkqtCnWGmTbV0/b/c6WJKTC9B50Kimd2Kgm9nJUvqj7UmFivCLBTjvjOgmcgbHApsPWrU4xhsP2AHjN9aB6HrHxtMK8tGev2W19ilJNqoKKPAiUaarsMYauyI5s4zmDg4SNojU6CMtZHcRgDh3J6hJWjnfKR/bkP6exQykul2yveStzcY3V8SzrbW8bHa8TDC3V3mUy1MiVVjYwon7JJ9Qnu14ahAxL3dztJb//Km0WpdEYPMAFzih4L+PGQvlt0aZtLvAgMBAAECggEALrnzsMYZKpaKQDx3LLMWEy7k1Y1BB7TO9o7BQ2sCRnTC71wx22oBIXoe5xq6ZZI/fvcEMaBSEv7RdAFogRuWKi0vKmoqI5ecxzQ7d6LAjSjAPEL+MV9RUna4s5IKEpGOcNzL66p7mfxpovpU+Bq7Kg8XgajRWpazuWYlXWMUuDnhdh1PLAwq2P7TrQQxEML/tN51XP+i2NtUBvggPB+3yPUdiasQU3VCwBB7eGGnuM/bp8srXxBnmcJ8DZpnRRFFVHSrxn6/Fu/qcpeJuA7sbmGHHNjq+b+KVGV2dDlchJKbl+FXO/41TCBiUgUIZvFwtodHMRADzu5vM9YX+5FzQQKBgQDLKmAkFh7u0bwMx8wUbsQ4aNv/IH8TM7bf6vACVLL4e+cuY5U/6OdyDSSsLQ4p71xvwoANuVWYUhm9PXVM3KRlcSRHWz0w1SzzQH8nGCnbPo2soe2itqsorH3WtDg0m/ed5nfzta8JGwlYNP/weSg58jbVtZHb/72eiX9HyALJjQKBgQC4u1kLZFiMB6XUfxnQQ4DPJvZtWc8GbZ+L0RZTpKParzURZ0fO+nVTpLvsdkh2010JzD1+MYK+IUG0ggGUwVeeTnnZhEJU0Nr78ydF+HHDmGc2Xe9umPrlD8eggfVie0kLseSsxoA/kUq/FamKm4e8d72YIi8lY6blY1r+HQkpawKBgQCdrqD5wRV3A99xB+zz+thec7wzslQOYjfQaLapCHXzd68BCRdAiBKCKYNKApoYoAddUlcyz6KIW0hQ4Q9WfXU2qm6e10iRyxJdJbTKce2ilVU+JFucyyvioKX2at+orVis+8AjreJRLeO9yzzNtisrdjtq+MZhOodAMbVQ0AKhzQKBgQC2nt8EWAsBQ344d/342QK5xvbOW35CCJU1D1pXDee+BH8d2VAv2YGrUqtEtBom/gR37yTLX/60HwRpgiw19ny7zzC+S/WXC3GwqUwl69nrVvqR0IMmfq1pTRQ4JMGEvgQUP6Sk+QdH0EZoaO3WTLL/KhCQGRsqhz0yf+owVFv+SQKBgGK7+CJtEKjIjK3jPmyYdAzOzVfAgS1wU6AAaOxhmO6PyRXCzsyQv0ixDY3AqF3K7V2f0Nk92jFYa5rSKEBEYVBGsftoqfRdTRj64OGkXXB2GNlKip3meeXaoUqz660YL2qEAJCO4M/6CB042G0C8pFKC1osuEU3A2htBvPBmOXp
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAstwjhiGCPJwEWfj9Xqj4glApumMbGxckpYO7Pk0+ZFCu6mswjVBwA4Qo04t8hFzG26cZfx0ijasVfelGrilAS9rScdWE4Qr2fIl8ZuIAql7JoGnLnXfNqmZiBlWbZh4ApO9+bYZOA9WRNf2/ep/r105k26Hdzn5JfF5ekuSjcbuqPdkuA1YtHqxYLOzsbVPDjdXmRP9Jm7eI9AAZOkuIhvSqx/3m8LsoLRqn7ZgRuH/hswhJwilZNsaHNyuhiY/BP6JUObw1g5b/JcwTkqS6YeN/aRS3/nt9o6JgwR99NFoCv4c+odcAbNjOCcBNPE4S6inZSLNLrWnII4JRLrEr3wIDAQAB
+  notifyUrl: http://g573rt.natappfree.cc/alipay/notify
+  returnUrl: http://localhost:8889/#/user/resetPassword
+
+
+
+
+
+
+
+# mybatis-plus的配置
+mybatis-plus:
+  #configuration:
+  #  map-underscore-to-camel-case: true  #驼峰命名规则
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.selfstudy
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted  #全局逻辑删除
+      id-type: auto #主键策略自增长
+#      table-prefix: news_ # 设置表的前缀
+#jwt配置
+jwt:
+  token:
+    tokenExpiration: 120 #有效时间,单位分钟
+    tokenSignKey: headline123456  #当前程序签名秘钥 自定义
+#logging:
+#  level:
+#    root: info
+#    org.springframework: info
+#    com.selfstudy: debug
+
+
+
